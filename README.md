@@ -1,7 +1,7 @@
 # PyInstaller
 A customizable installer for programs or packages, written in Python.
 
-[ (There is a bash version avalible, as well.) ]
+(//): [ (There is a bash version avalible, as well.) ]
 
 ## Note:
 I reccomend using this as a curl installer. To do it, just use the command
