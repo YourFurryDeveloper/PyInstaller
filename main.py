@@ -6,13 +6,13 @@ os.system("clear")
 # ==========| INSTALLER CUSTOMIZATION/SETTINGS |==========
 
 global pkgName
-pkgName = "Twoblade-Chatbot"
+pkgName = "Your Package Name"
 
 # Here, you add all the URLS of the files that need to be downloaded.
-fileurls = ["https://raw.githubusercontent.com/emexos/ai_bot/refs/heads/main/index.js", "https://raw.githubusercontent.com/emexos/ai_bot/refs/heads/main/Bot/ai.js", "https://raw.githubusercontent.com/emexos/ai_bot/refs/heads/main/Bot/bot.js"]
+fileurls = []
 
 # And here, you add the folders that each file should go into. If they should stay in the current directory, just put "./". (The position of the item in this list corresponds to the position of the item in the list above.)
-folders = ["./", "./bot/", "./bot/"]
+folders = []
 
 
 # ========================================================
