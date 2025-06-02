@@ -14,7 +14,6 @@ fileurls = []
 # And here, you add the folders that each file should go into. If they should stay in the current directory, just put "./". (The position of the item in this list corresponds to the position of the item in the list above.)
 folders = []
 
-
 # ========================================================
 
 def setLoadBar(loadprog):
