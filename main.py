@@ -14,6 +14,8 @@ fileurls = []
 # And here, you add the folders that each file should go into. If they should stay in the current directory, just put "./". (The position of the item in this list corresponds to the position of the item in the list above.)
 folders = []
 
+sudoRequired = False
+
 # ========================================================
 
 def setLoadBar(loadprog):
@@ -30,7 +32,8 @@ def installPrereqs():
         setLoadBar(int(100 / len(fileurls) * fileCount))
         print(f"\nGetting {file}...")
         os.makedirs(folders[fileCount - 1], exist_ok=True)
-        os.system(f'curl --progress-bar -o "{folders[fileCount - 1]}/$(basename {file})" "{file}"')
+        if sudoRequired: os.system(f'sudo curl --progress-bar -o "{folders[fileCount - 1]}/$(basename {file})" "{file}"')
+        else: os.system(f'curl --progress-bar -o "{folders[fileCount - 1]}/$(basename {file})" "{file}"')
         time.sleep(0.5)
 
 installPrereqs()
