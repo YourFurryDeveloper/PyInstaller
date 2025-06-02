@@ -36,4 +36,5 @@ def installPrereqs():
         else: os.system(f'curl --progress-bar -o "{folders[fileCount - 1]}/$(basename {file})" "{file}"')
         #time.sleep(0.5)
 
+input(f"Press enter to begin installation of {pkgName} > ")
 installPrereqs()
