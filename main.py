@@ -18,9 +18,15 @@ sudoRequired = False
 
 # ========================================================
 
+RED = "\033[31m"
+GREEN = "\033[32m"
+BLUE = "\033[34m"
+BOLD = "\033[1m"
+RESET = "\033[0m"
+
 def setLoadBar(loadprog):
     progLeft = 100 - loadprog
-    print(f"{int(loadprog / 100 * 100)}% [{"#" * loadprog}{"-" * progLeft}]\n")
+    print(f"{BLUE}{int(loadprog / 100 * 100)}% [{"#" * loadprog}{"-" * progLeft}]{RESET}\n")
 
 def installPrereqs():
     fileCount = 0
@@ -28,14 +34,14 @@ def installPrereqs():
     for file in fileurls:
         fileCount += 1
         os.system("clear")
-        print(f"Installing {pkgName}\n")
+        print(f"{BOLD}{GREEN}Installing {pkgName}{RESET}\n")
         setLoadBar(int(100 / len(fileurls) * fileCount))
-        print(f"\nGetting {file}...")
+        print(f"\nGetting {BOLD}{file}{RESET}...")
         os.makedirs(folders[fileCount - 1], exist_ok=True)
         if sudoRequired: os.system(f'sudo curl --progress-bar -o "{folders[fileCount - 1]}/$(basename {file})" "{file}"')
         else: os.system(f'curl --progress-bar -o "{folders[fileCount - 1]}/$(basename {file})" "{file}"')
         #time.sleep(0.5)
-    print(f"\nFinished installation of {pkgName}.")
+    print(f"\nFinished installation of {BOLD}{pkgName}{RESET}.")
 
 #input(f"Press enter to begin installation of {pkgName} > ")
 installPrereqs()
