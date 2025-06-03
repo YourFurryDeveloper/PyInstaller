@@ -1,3 +1,5 @@
+# COPYRIGHT YOURFURRYDEVELOPER 2025
+
 import os
 import time
 
