@@ -40,6 +40,10 @@ def installPrereqs():
     if not len(cmds) == 0:
         for cmd in cmds:
             actionCount += 1
+            os.system("clear")
+            print(f"{BOLD}{GREEN}Installing {pkgName}{RESET}\n")
+            setLoadBar(int(100 / (len(fileurls) + len(cmds)) * actionCount))
+            print(f"\nRunning {BOLD}{cmd}{RESET}...")
             os.system(cmd)
 
     for file in fileurls:
@@ -53,7 +57,7 @@ def installPrereqs():
         if sudoRequired: os.system(f'sudo curl --progress-bar -o "{folders[fileCount - 1]}/$(basename {file})" "{file}"')
         else: os.system(f'curl --progress-bar -o "{folders[fileCount - 1]}/$(basename {file})" "{file}"')
         #time.sleep(0.5)
-    print(f"\nFinished installation of {BOLD}{pkgName}{RESET}.")
+    print(f"\nFinished installation of {GREEN}{BOLD}{pkgName}{RESET}.")
 
 #input(f"Press enter to begin installation of {pkgName} > ")
 installPrereqs()
